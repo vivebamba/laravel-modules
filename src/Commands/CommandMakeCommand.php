@@ -86,7 +86,7 @@ class CommandMakeCommand extends GeneratorCommand
     private function getCommandName($module)
     {
         $module = strtolower($module);
-        return $this->option('command') ?: $module . ':name';
+        return $this->option('command') ?: 'bamba-' . $module . ':name';
     }
 
     /**
