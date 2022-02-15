@@ -457,8 +457,10 @@ class ModuleGenerator extends Generator
             }
         }
 
-        $moduleNamespace = str_replace('src\\\\', '', $replaces['PROVIDER_NAMESPACE']);
-        $replaces['PROVIDER_NAMESPACE'] = $moduleNamespace;
+        if (array_key_exists('PROVIDER_NAMESPACE', $replaces)) {
+            $moduleNamespace = str_replace('src\\\\', '', $replaces['PROVIDER_NAMESPACE']);
+            $replaces['PROVIDER_NAMESPACE'] = $moduleNamespace;
+        }
 
         return $replaces;
     }
